@@ -1,4 +1,4 @@
-name: 'Jekyll Deploy Action'
+name: 'DDK Docs Build'
 description: >
   🪂  A Github Action to deploy the Jekyll site conveniently for GitHub Pages
 inputs:
