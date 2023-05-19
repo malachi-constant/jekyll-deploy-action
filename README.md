@@ -68,7 +68,7 @@ Pages.**
 
 ## 📚 Usage
 
-At First, you should add a github workflow file (e.g. `.github/workflows/build-jekyll.yml`) in your repository's `master` branch as below:
+At First, you should add a github workflow file (e.g. `.github/workflows/build-jekyll.yml`) in your repository's `main` branch as below:
 
 ```yml
 name: Build and Deploy to Github Pages
@@ -76,7 +76,7 @@ name: Build and Deploy to Github Pages
 on:
   push:
     branches:
-      - master  # Here source code branch is `master`, it could be other branch
+      - main  # Here source code branch is `main`, it could be other branch
 
 jobs:
   build_and_deploy:
@@ -93,7 +93,7 @@ jobs:
             ${{ runner.os }}-gems-
 
       # Use GitHub Deploy Action to build and deploy to Github
-      - uses: jeffreytse/jekyll-deploy-action@v0.4.0
+      - uses: malachi-constant/jekyll-deploy-action@0.1.0
         with:
           provider: 'github'
           token: ${{ secrets.GITHUB_TOKEN }} # It's your Personal Access Token(PAT)
@@ -181,12 +181,6 @@ pre_build_commands: pacman -S --noconfirm libvips lcms2 openjpeg2 libpng libwebp
 - [Jekyll](https://github.com/jekyll/jekyll) - A blog-aware static site generator in Ruby.
 - [actions/checkout](https://github.com/actions/checkout) - Action for checking out a repo.
 - [actions/cache](https://github.com/actions/cache) - Cache dependencies and build outputs in GitHub Actions.
-
-## ✍️  Contributing
-
-Issues and Pull Requests are greatly appreciated. If you've never contributed to an open source project before I'm more than happy to walk you through how to create a pull request.
-
-You can start by [opening an issue](https://github.com/jeffreytse/jekyll-deploy-action/issues/new) describing the problem that you're looking to resolve and we'll go from there.
 
 ## 🌈 License
 
