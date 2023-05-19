@@ -21,6 +21,7 @@ REMOTE_REPO="https://${ACTOR}:${TOKEN}@github.com/${REPOSITORY}.git" && \
   git init && \
   git config user.name "${ACTOR}" && \
   git config user.email "${ACTOR}@users.noreply.github.com" && \
+  git config --global http.postBuffer 524288000 && \
   git add . && \
   git commit -m "jekyll build from Action ${GITHUB_SHA}" && \
   git push --force $REMOTE_REPO main:$BRANCH && \
